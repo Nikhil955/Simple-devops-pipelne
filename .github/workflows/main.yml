@@ -19,10 +19,9 @@ jobs:
   - name: Run PowerShell script
     run: |
         # Navigate to the directory where the repository was cloned
-        cd 
 
         # Run your PowerShell script
-        powershell -File path/to/your-script.ps1
+        powershell -File main.ps1
   #- name: run script
   #  shell: pwsh
    # run: ./main.ps1 -Task ModuleBuild
