@@ -13,7 +13,7 @@ jobs:
     uses: actions/checkout@v3
     with:
       repository: Nikhil@955/HelloWorldJava
-      path: ./main.ps1
+      path: main.ps1
   - name: run script
     shell: pwsh
     run: ./main.ps1 -Task ModuleBuild
