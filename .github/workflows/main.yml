@@ -9,7 +9,9 @@ jobs:
  runscript:
   runs-on: self-hosted
   steps:
-  - name: Checkout repo
+  - name: Checkout current repository
+    uses: actions/checkout@v3
+  - name: Checkout another repo
     uses: actions/checkout@v3
     with:
       repository: Nikhil@955/HelloWorldJava
