@@ -1,4 +1,4 @@
-name: RunPscript
+name: Pipeline
 
 on:
  push: 
@@ -6,7 +6,7 @@ on:
      - 'master'
 
 jobs:
- runscript:
+ Checkout:
   runs-on: self-hosted
   steps:
   - name: Checkout current repository
@@ -25,6 +25,14 @@ jobs:
   #- name: run script
   #  shell: pwsh
    # run: ./main.ps1 -Task ModuleBuild
+ Build:
+  runs-on: self-hosted
+  steps:
+  - name: Build with Gradle
+  # You may pin to the exact commit or the version.
+  # uses: gradle/actions@ed408507eac070d1f99cc633dbcf757c94c7933a
+    uses: gradle/actions@v4.4.3
+          
  sonarqube:
     name: SonarQube
     runs-on: ubuntu-latest
@@ -36,4 +44,7 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: 33a274b8d023af19b6c8add08b72be102cfdb180
+
+
+
         
